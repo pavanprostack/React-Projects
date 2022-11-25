@@ -1,0 +1,43 @@
+.container {
+    padding-top: 30px;
+    width: 100%;
+    margin: auto;
+}
+
+.input {
+    padding: 5px 15px;
+    width: 300px;
+}
+
+.user-list {
+    margin-top: 30px;
+  }
+
+  .user {
+    list-style: none;
+    padding: 10px;
+    /* border: 1px solid red; */
+    margin: 10px;
+    background-color: #eee;
+    display:flex;
+    justify-content: space-between;
+  }
+  
+ 
+  .user-id {
+    color: red;
+    margin-right: auto;
+  }
+   
+  .user-name {
+    color: blue;
+  }
+  
+  .user-age {
+    margin-left: auto;
+    margin-left: auto;
+  }
+
+  .noResults {
+    color: red;
+  }
