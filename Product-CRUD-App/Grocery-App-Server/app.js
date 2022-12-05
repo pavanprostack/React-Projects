@@ -26,12 +26,12 @@ app.use("/product", productRouter)
 
 let mongo_Url = process.env.MONGO_DB_LOCAL_URL
 mongoose.connect(mongo_Url).then((response)=>{
-    console.log(`Mongo DB - Connected Successfully.`)
+    console.log(chalk.blueBright(`Mongo DB - Connected Successfully.`))
 }).catch((err)=>{
     console.log(err);
     process.exit(1);
 })
 
 app.listen(port,hostname, () => {
-    console.log(chalk.magentaBright(`Server is running on....http://${hostname}:${port}`))
+    console.log(chalk.magentaBright(`Express Server is running on http://${hostname}:${port}`))
 })
