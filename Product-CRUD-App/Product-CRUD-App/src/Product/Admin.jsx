@@ -23,7 +23,7 @@ const Admin = () => {
 
     let deleteProduct = (id) => {
         Axios.delete(`http://localhost:3000/products/${id}`).then((response) => {
-            navigate(0)    // after deleting the product it will refresh and stay at that page only.
+            navigate(0)    // after deleting the product it will refresh and stay at the same page only.
          }).catch(() => { })
     }
 
@@ -51,7 +51,7 @@ const Admin = () => {
                                             return <tr key={product.id}>
                                                 <td>{product.id}</td>
                                                 <td>{product.name}</td>
-                                                <td><img src={product.image} alt="img" width='70px' /></td>
+                                                <td><img src={product.image} alt="img" width='70px'/></td>
                                                 <td>{product.price}</td>
                                                 <td>{product.qty}</td>
                                                 <td><Link to={`/edit/${product.id}`} className='btn btn-success'>Edit</Link>&nbsp;<Link className='btn btn-danger' onClick={deleteProduct.bind(this, product.id)}>Delete</Link></td>

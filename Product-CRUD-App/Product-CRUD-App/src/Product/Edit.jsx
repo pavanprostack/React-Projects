@@ -34,7 +34,6 @@ const Edit = () => {
 
     let submitHandler = (event) => {
         event.preventDefault();
-
         let url = `http://localhost:3000/products/${selectedId}`;
         Axios.put(url, selectedProduct).then((response) => {
             console.log(response.data)
@@ -62,7 +61,7 @@ const Edit = () => {
 
     return <>
         {
-            submitted ? <Navigate to="/product" /> :
+            setSubmitted ? <Navigate to="/product" /> :
 
                 <div className="container mt-5">
 
