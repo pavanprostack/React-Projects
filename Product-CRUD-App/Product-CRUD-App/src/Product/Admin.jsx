@@ -48,7 +48,7 @@ const Admin = () => {
                                 products.length > 0 ? <>
                                     {
                                         products.map((product) => {
-                                            return <tr key={product.id}>
+                                            return <tr key={product._id}>
                                                 <td>{product.id}</td>
                                                 <td>{product.name}</td>
                                                 <td><img src={product.image} alt="img" width='70px'/></td>

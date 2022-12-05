@@ -31,7 +31,7 @@ const Edit = () => {
         e.preventDefault();
         const url = `http://127.66.77.88:5000/product/${selected_Id}`
         Axios.put(url, selectedProduct).then((res) => {
-            console.log(res.data)
+            console.log(res.data);
             setUpdated(true)
         }).catch(() => { })
     }
