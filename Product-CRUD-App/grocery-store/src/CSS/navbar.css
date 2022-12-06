@@ -1,0 +1,7 @@
+.navbar{
+  background:   linear-gradient(to right, #1d08d8d7 , hwb(188 1% 93% / 0.895));
+  background:
+        linear-gradient(hsla(239, 95%, 49%, 0.765), transparent),
+        linear-gradient(to top left, #ff0000, transparent),
+        linear-gradient(to top right, #0fadec, transparent);
+}

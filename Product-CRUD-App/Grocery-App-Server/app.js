@@ -15,8 +15,8 @@ let hostname = process.env.HOST_NAME;
 app.use(morgan('tiny'));
 app.use(cors());
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ limit: '10mb' }));
 
 app.get("/", (req, res)=>{
     res.send("<h1>Grocery App Server</h1>")

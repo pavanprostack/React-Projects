@@ -20,7 +20,7 @@ const CreateProduct = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    const url = `http://127.66.77.88:5000/product/create`
+    const url = `http://127.66.77.88:5000/product/create/`
     Axios.post(url, product).then((response) => {
       console.log(response.data);
       setSubmitted(true);
@@ -44,7 +44,7 @@ const CreateProduct = () => {
 
   return <>
   {
-    submitted?<><Navigate to="/admin"/></>:
+    submitted?<Navigate to="/admin"/>:
   
     <div className="container mt-5">
       <pre>{JSON.stringify(product)}</pre>

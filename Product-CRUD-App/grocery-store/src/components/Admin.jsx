@@ -15,12 +15,12 @@ const Admin = () => {
 
     const navigate = useNavigate()
 
-    const delProduct = (id)=>{
-      const url = `http://127.66.77.88:5000/product/${id}`
-      Axios.delete(url).then((response)=>{
-        console.log(response.data);
-        navigate(0);
-      }).catch(()=>{})
+    const delProduct = (id) => {
+        const url = `http://127.66.77.88:5000/product/${id}`
+        Axios.delete(url).then((response) => {
+            console.log(response.data);
+            navigate(0);
+        }).catch(() => { })
     }
 
     return <>
@@ -44,12 +44,15 @@ const Admin = () => {
                                     {
                                         products.map((product, index) => {
                                             return <tr key={index}>
-                                              <td>{product._id.slice(20,25)}</td>
-                                              <td>{product.name}</td>
-                                              <td><img src={product.image} alt="img" width='60px' /></td>
-                                              <td>{product.price}</td>
-                                              <td>{product.qty}</td>
-                                              <td><Link to={`/edit/${product._id}`} className='btn btn-success'>Edit</Link> &nbsp;<Link className='btn btn-danger' onClick={delProduct.bind(this, product._id)}>Delete</Link></td>
+                                                <td>{product._id.slice(20, 25)}</td>
+                                                <td>{product.name}</td>
+                                                <td><img src={product.image} alt="img" width='60px' /></td>
+                                                <td>{product.price}</td>
+                                                <td>{product.qty}</td>
+                                                <td>
+                                                    <Link to={`/update/${product._id}`} className='btn btn-success'>Edit</Link> &nbsp;
+                                                    <Link className='btn btn-danger' onClick={delProduct.bind(this, product._id)}>Delete</Link>
+                                                </td>
                                             </tr>
                                         })
                                     }

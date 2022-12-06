@@ -3,7 +3,8 @@ import Axios from 'axios';
 import { Navigate, useParams } from 'react-router-dom';
 
 const Edit = () => {
-
+    const [product_Id] = useState(useParams().id)
+    const [updated, setUpdated] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState({
         name: "",
         image: "",
@@ -12,24 +13,19 @@ const Edit = () => {
         info: ""
     });
 
-
-    const [updated, setUpdated] = useState(false);
-
     const updateHandler = (e) => {
         setSelectedProduct({ ...selectedProduct, [e.target.name]: e.target.value })
     }
 
-    const selected_Id = useParams().id
-
     useEffect(() => {
-        Axios.get(`http://127.66.77.88:5000/product/${selected_Id}`).then((response) => {
+        Axios.get(`http://127.66.77.88:5000/product/${product_Id}`).then((response) => {
             setSelectedProduct(response.data);
         }).catch(() => { })
-    }, [selected_Id])
+    }, [product_Id])
 
     const submitHandler = (e) => {
         e.preventDefault();
-        const url = `http://127.66.77.88:5000/product/${selected_Id}`
+        const url = `http://127.66.77.88:5000/product/${product_Id}`
         Axios.put(url, selectedProduct).then((res) => {
             console.log(res.data);
             setUpdated(true)
@@ -52,43 +48,45 @@ const Edit = () => {
     }
 
     return <>
-        {
-            setUpdated ? <Navigate to='/product' /> :
+    {
+       updated ? <Navigate to='/admin' /> :
+    
+        <div className="container">
+            <pre>{JSON.stringify(selectedProduct)}</pre>
+            <pre>{JSON.stringify(product_Id)}</pre>
+            <pre>{JSON.stringify(updated)}</pre>
+            <div className="row">
+                <div className="col-4">
+                    <div className="card">
+                        <div className="card-header bg-success">
+                            <h1>Update Product</h1>
+                        </div>
+                        <div className="card-body bg-dark">
 
-                <div className="container">
-                    <pre>{JSON.stringify(selectedProduct)}</pre>
-                    <pre>{JSON.stringify(updated)}</pre>
-                    <div className="row">
-                        <div className="col-6">
-                            <div className="card">
-                                <div className="card-header">
-                                    <h1>Update Product</h1>
+                            <form onSubmit={submitHandler}>
+                                <div className='form-group'>
+                                    <input type="text" name='name' value={selectedProduct.name} className='form-control' onChange={updateHandler} placeholder='Product Name' />
                                 </div>
-                                <div className="card-body">
-
-                                    <form onSubmit={submitHandler}>
-                                        <div className='form-group'>
-                                            <input type="text" name='name' value={selectedProduct.name} className='form-control' onChange={updateHandler} placeholder='Product Name' />
-                                        </div>
-                                        <div className='form-group'>
-                                            <input type="file" name='image' className='form-control-file' onChange={changeImage} placeholder='Image' />
-                                        </div>
-                                        <div className='form-group'>
-                                            <input type="number" name='price' value={selectedProduct.price} className='form-control' onChange={updateHandler} placeholder='Price' />
-                                        </div>
-                                        <div className='form-group'>
-                                            <input type="number" name='qty' value={selectedProduct.qty} className='form-control' onChange={updateHandler} placeholder='Qty' />
-                                        </div>
-                                        <div className='form-group'>
-                                            <input type="text" name='info' value={selectedProduct.info} className='form-control' onChange={updateHandler} placeholder='Info' />
-                                        </div>
-                                    </form>
+                                <div className='form-group'>
+                                    <input type="file" name='image' className='form-control-file' onChange={changeImage} placeholder='Image' />
                                 </div>
-                            </div>
+                                <div className='form-group'>
+                                    <input type="number" name='price' value={selectedProduct.price} className='form-control' onChange={updateHandler} placeholder='Price' />
+                                </div>
+                                <div className='form-group'>
+                                    <input type="number" name='qty' value={selectedProduct.qty} className='form-control' onChange={updateHandler} placeholder='Qty' />
+                                </div>
+                                <div className='form-group'>
+                                    <input type="text" name='info' value={selectedProduct.info} className='form-control' onChange={updateHandler} placeholder='Info' />
+                                </div>
+                                <input type="submit" className='btn btn-primary' value='Update'  onChange={updateHandler}/>
+                            </form>
                         </div>
                     </div>
                 </div>
-        }
+            </div>
+        </div>
+    }
     </>
 }
 
