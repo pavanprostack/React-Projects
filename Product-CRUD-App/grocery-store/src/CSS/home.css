@@ -1,0 +1,47 @@
+body{
+    min-height: 100vh;
+    background: linear-gradient(hwb(114 4% 8% / 0.946), transparent),
+    linear-gradient(to top left, #5825ef, transparent),
+    linear-gradient(to top right, #0e0101, transparent);;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+}
+
+.card-header-form{
+    border: 1px solid rgb(0, 183, 255);
+    padding: 15px;
+    border-radius: 10px 10px 0px 0px ;
+    text-align: center;
+    color: #25cdef;
+    text-shadow: 1px 1px 5px #ff6a00;
+    background-color:#091a3e ;
+}
+
+.card-body{
+    background: linear-gradient(hwb(319 2% 9%), rgb(15, 182, 229));
+}
+
+.btn1{
+    border: 2px solid rgb(0, 255, 170);
+    padding:5px 15px;
+    border-radius: 25%;
+    text-align: center;
+    color:rgb(3, 189, 236) ;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: #51066c;
+}
+
+.btn1:hover{
+    color:rgb(107, 203, 227) ;
+}
+
+td{
+   white-space: nowrap;
+}
+
+li{
+    z-index: 1;
+}
+

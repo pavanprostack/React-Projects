@@ -1,10 +1,17 @@
 import React from 'react'
+import '../CSS/home.css'
 
 const Home = () => {
   return <>
-  <center>
-  <h1 className='mt-5'>Home</h1>
-  </center>
+    <center>
+      <div className="container mt-3">
+        <div className="row">
+          <div className="col-md">
+            <img src="https://www.emoji.com/wp-content/uploads/filebase/3d%20icons/emoji-3d%20icons-glossy-3d-icons-supermarket-72dpi-forPersonalUseOnly.gif" alt="img" />
+          </div>
+        </div>
+      </div>
+    </center>
   </>
 }
 

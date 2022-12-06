@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react'
 import Axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import '../CSS/admin.css'
 
 const Admin = () => {
     const [products, setProducts] = useState([]);
@@ -28,7 +29,7 @@ const Admin = () => {
             <div className="row">
                 <div className="col-6">
                     <table className='table table-hover table-striped'>
-                        <thead className='bg-info text-center'>
+                        <thead>
                             <tr>
                                 <th>Id</th>
                                 <th>Name</th>
@@ -50,8 +51,8 @@ const Admin = () => {
                                                 <td>{product.price}</td>
                                                 <td>{product.qty}</td>
                                                 <td>
-                                                    <Link to={`/update/${product._id}`} className='btn btn-success'>Edit</Link> &nbsp;
-                                                    <Link className='btn btn-danger' onClick={delProduct.bind(this, product._id)}>Delete</Link>
+                                                    <Link to={`/update/${product._id}`} className='edit-btn'>Edit</Link> &nbsp;
+                                                    <Link className='del-btn' onClick={delProduct.bind(this, product._id)}>Delete</Link>
                                                 </td>
                                             </tr>
                                         })

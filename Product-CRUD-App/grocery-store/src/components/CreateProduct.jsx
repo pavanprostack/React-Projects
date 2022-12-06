@@ -47,15 +47,15 @@ const CreateProduct = () => {
     submitted?<Navigate to="/admin"/>:
   
     <div className="container mt-5">
-      <pre>{JSON.stringify(product)}</pre>
-      <pre>{JSON.stringify(submitted)}</pre>
+      {/* <pre>{JSON.stringify(product)}</pre>
+      <pre>{JSON.stringify(submitted)}</pre> */}
       <div className="row">
         <div className="col-4">
           <div className="card">
-            <div className="card-header bg-primary text-white">
+            <div className="card-header-form">
               <h2>Select Product</h2>
             </div>
-            <div className="card-body bg-info">
+            <div className="card-body">
               <form onSubmit={submitHandler}>
                 <div className='form-group'>
                   <input type="text" placeholder='Product Name' className='form-control' onChange={getInput} name='name' />
@@ -72,7 +72,7 @@ const CreateProduct = () => {
                 <div className='form-group'>
                   <input type="text" placeholder='info' className='form-control' onChange={getInput} name='info' />
                 </div>
-                <input type="submit" value='Add Product' className='btn btn-success' />
+                <input type="submit" value='Add Product' className='btn1' />
               </form>
             </div>
           </div>

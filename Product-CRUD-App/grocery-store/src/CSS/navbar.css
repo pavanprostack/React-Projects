@@ -5,3 +5,20 @@
         linear-gradient(to top left, #ff0000, transparent),
         linear-gradient(to top right, #0fadec, transparent);
 }
+
+.navbar {
+  position: sticky;
+  scroll-behavior: smooth;
+  top: 0;
+  width: 100%;
+  font-size: 20px;
+  z-index: 1;
+}
+
+.navbar-brand{
+  font-size:30px ;
+  font-style: italic;
+  font-weight:bolder;
+}
+
+

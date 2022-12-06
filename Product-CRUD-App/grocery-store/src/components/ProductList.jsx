@@ -2,6 +2,7 @@ import Axios from 'axios';
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react'
+import '../CSS/list.css'
 
 const ProductList = () => {
 
@@ -16,14 +17,14 @@ const ProductList = () => {
 
   return <>
     <div className="container mt-5">
-      <pre>{JSON.stringify(products)}</pre>
+      {/* <pre>{JSON.stringify(products)}</pre> */}
       <div className="row">
         {
           products.length > 0 ? <>
             {
               products.map((product)=>{
                 return <div className="col-3" key={product.id}>
-                  <div className="card bg-info">
+                  <div className="card-list">
                     <div className="card-header">
                       <img src={product.image} alt="img" width='70px'/>
                     </div>

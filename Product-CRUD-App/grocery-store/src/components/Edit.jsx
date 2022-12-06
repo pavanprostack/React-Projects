@@ -51,14 +51,14 @@ const Edit = () => {
     {
        updated ? <Navigate to='/admin' /> :
     
-        <div className="container">
-            <pre>{JSON.stringify(selectedProduct)}</pre>
+        <div className="container mt-5">
+            {/* <pre>{JSON.stringify(selectedProduct)}</pre>
             <pre>{JSON.stringify(product_Id)}</pre>
-            <pre>{JSON.stringify(updated)}</pre>
+            <pre>{JSON.stringify(updated)}</pre> */}
             <div className="row">
                 <div className="col-4">
                     <div className="card">
-                        <div className="card-header bg-success">
+                        <div className="card-header-form">
                             <h1>Update Product</h1>
                         </div>
                         <div className="card-body bg-dark">
@@ -79,7 +79,7 @@ const Edit = () => {
                                 <div className='form-group'>
                                     <input type="text" name='info' value={selectedProduct.info} className='form-control' onChange={updateHandler} placeholder='Info' />
                                 </div>
-                                <input type="submit" className='btn btn-primary' value='Update'  onChange={updateHandler}/>
+                                <input type="submit" className='btn1' value='Update'  onChange={updateHandler}/>
                             </form>
                         </div>
                     </div>
