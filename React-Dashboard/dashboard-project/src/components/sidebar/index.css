@@ -1,6 +1,6 @@
 :root {
     --header-height: 3rem;
-    --nav-width: 68px;
+    --nav-width: 5px;
 
     --first-color: #f10086;
     --first-color-alt: #f582a7;
@@ -53,7 +53,7 @@ main {
 .sidebar {
     position: fixed;
     top: 0;
-    left: -30%;
+    left: 0;
     height: 100vh;
     width: var(--nav-width);
     background-color: var(--first-color);
@@ -69,6 +69,7 @@ main {
     height: 100%;
 }
 
+
 .nav-logo,
 .nav-link {
     display: grid;
@@ -79,18 +80,26 @@ main {
 
 .nav-logo {
     margin-bottom: 2rem;
+    border-bottom: 1px solid white;
 }
 
-.nav-logo-icon {
+
+
+/* .nav-logo-icon {
     font-size: 1.25rem;
     color: var(--white-color);
     cursor: pointer;
-}
+} */
 
-.nav-logo-name {
+/* .nav-logo-name {
     font-weight: 700;
     color: var(--white-color);
+} */
+
+.margin{
+   margin-left: 50px;
 }
+
 
 .nav-link {
     position: relative;
@@ -145,7 +154,7 @@ main {
     }
 
     .show {
-        width: calc(var(--header-height) + 156px);
+        width: calc(var(--header-height) + 126px);
     }
 
     .space-toggle {
