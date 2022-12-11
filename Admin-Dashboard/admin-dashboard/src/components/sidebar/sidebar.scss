@@ -2,7 +2,7 @@
     flex: 1;
     border-right: 0.5px solid hwb(0 83% 17%);
     min-height: 100vh;
-    background-color: rgb(196, 219, 103);
+    background-color: rgb(228, 229, 222);
 
     .top {
         height: 50px;
@@ -41,7 +41,7 @@
             li {
                 display: flex;
                 align-items: center;
-                padding: 5px;
+                padding: 3px;
                 cursor: pointer;
 
                 &:hover {
