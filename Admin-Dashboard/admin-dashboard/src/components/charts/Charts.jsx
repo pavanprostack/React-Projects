@@ -2,7 +2,7 @@ import React from 'react'
 import '../charts/charts.scss'
 // npm i recharts 
 // from recharts.com
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { AreaChart, Area, XAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 const data = [
     {name: 'january',total:1200},
     {name: 'Febuary',total:2100},
