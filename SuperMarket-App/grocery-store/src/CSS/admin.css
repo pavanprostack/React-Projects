@@ -5,10 +5,13 @@ thead{
 }
 
 tbody{
-    text-align: center;
-    justify-content: center;
     color: rgb(0, 10, 13);
    background: linear-gradient(rgb(255, 225, 0), rgb(219, 15, 49));
+}
+
+tbody tr{
+    /* height: 20px; */
+    /* display: flex; */
 }
 
 .edit-btn{

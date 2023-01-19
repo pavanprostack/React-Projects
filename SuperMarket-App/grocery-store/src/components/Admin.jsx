@@ -29,7 +29,7 @@ const Admin = () => {
             <div className="row">
                 <div className="col-6">
                     <table className='table table-hover table-striped'>
-                        <thead>
+                        <thead className='text-center'>
                             <tr>
                                 <th>Id</th>
                                 <th>Name</th>
