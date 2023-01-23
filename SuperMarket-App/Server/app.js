@@ -18,7 +18,7 @@ app.use(morgan('tiny'));
 app.use(cors());
 
 app.use(express.json({ limit: '10mb' }));
-app.use(express.urlencoded({ limit: '10mb' }));
+app.use(express.urlencoded({ limit: '10mb', extended: false }));
 
 
 app.get("/", (req, res) => {
@@ -30,7 +30,13 @@ app.use("/product", productRouter)
 let mongo_Url = process.env.MONGO_DB_LOCAL_URL
 
 mongoose.set('strictQuery', false)
-mongoose.connect(mongo_Url, { useNewUrlParser: true }).then((response) => {
+
+const connectionParams = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}
+
+mongoose.connect(mongo_Url, connectionParams).then((response) => {
     console.log(chalk.blueBright(`Mongo DB - Connected Successfully.`))
 }).catch((err) => {
     console.log(err);
