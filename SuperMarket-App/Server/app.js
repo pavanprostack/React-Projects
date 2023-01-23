@@ -7,6 +7,7 @@ import chalk from "chalk";
 import productRouter from './router/productRouter.js'
 
 
+
 const app = express();
 
 dotenv.config({ path: "config/config.env" });
@@ -18,6 +19,7 @@ app.use(cors());
 
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ limit: '10mb' }));
+
 
 app.get("/", (req, res) => {
     res.send("<h1>Grocery App Server</h1>")
