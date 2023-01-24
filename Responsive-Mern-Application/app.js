@@ -6,8 +6,6 @@ import express from 'express'
 import chalk from "chalk";
 import productRouter from './router/productRouter.js'
 
-
-
 const app = express();
 
 dotenv.config({ path: "config/config.env" });
