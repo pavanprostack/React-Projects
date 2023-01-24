@@ -10,7 +10,6 @@ import ListOutlinedIcon from '@mui/icons-material/ListOutlined';
 
 
 
-
 const Navbar = () => {
   return <>
     <div className="navbar">
