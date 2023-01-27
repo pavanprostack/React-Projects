@@ -1,10 +1,11 @@
-require("dotenv").config();
+require("dotenv").config({ path: "config/config.env" });
 const express = require("express");
 const app = express();
 const cors = require("cors");
 const connection = require("./db");
 const userRoutes = require("./routes/users");
 const authRoutes = require("./routes/auth");
+const morgan = require('morgan')
 
 // database connection
 connection();
@@ -12,6 +13,7 @@ connection();
 // middlewares
 app.use(express.json());
 app.use(cors());
+app.use(morgan("tiny"));
 
 // routes
 app.use("/api/users", userRoutes);
